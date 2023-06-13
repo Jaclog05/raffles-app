@@ -1,0 +1,29 @@
+.container {
+    background-color: #dcdcdc;
+    border-bottom: 1px solid #ffa500;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container div {
+    background-color: #ffa500;
+    color: #ffffff;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.container ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container ul li {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.container ul li:hover {
+    background-color: #ffa500;
+    color: #ffffff;
+    cursor: pointer;
+}
