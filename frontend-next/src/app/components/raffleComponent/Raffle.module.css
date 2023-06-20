@@ -1,0 +1,10 @@
+
+.container {
+    height: 10rem;
+    background: #ffa500;
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 10rem auto;
+    text-align: center;
+}
