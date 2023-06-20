@@ -1,0 +1,17 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rafflesWrapper{
+    margin: 0px auto;
+    max-width: 80vw;
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
