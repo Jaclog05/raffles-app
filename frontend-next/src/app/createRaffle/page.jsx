@@ -26,9 +26,10 @@ export default function CreateRaffle() {
   const handleSubmit = (e) => {
     e.preventDefault()
     setRaffleGlobal(prevState => {
+        const newId = prevState.rafflesArray.length;
         return {
             ...prevState,
-            rafflesArray: [...prevState.rafflesArray, {id: raffleInfo.id++, ...raffleInfo}]
+            rafflesArray: [...prevState.rafflesArray, {id: newId, ...raffleInfo}]
         }
     })
     setRaffleInfo(initialState)
