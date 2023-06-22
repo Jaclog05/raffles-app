@@ -40,6 +40,7 @@ export default function CreateRaffle() {
    <NavBar/>
     <div className={styles.container}>
         <form onSubmit={handleSubmit}>
+            <h3>Creación de Rifas</h3>
             <label>
                 Seleccione cuantas boletas tendrá la rifa
                 <select name='numTickets' onChange={handleChange}>

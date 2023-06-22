@@ -1,3 +1,19 @@
+.first-color { 
+	background: #222831; 
+}
+	
+.second-color { 
+	background: #2d4059; 
+}
+
+.third-color { 
+	background: #ff5722; 
+}
+
+.fourth-color { 
+	background: #eeeeee; 
+}
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -5,28 +21,45 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #dcdcdc;
+    background-color: #2d4059;
 }
 
 .container form {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     flex-wrap: wrap;
     border-radius: 2rem;
-    background-color: #ffa500;
-    color: #ffffff;
-    padding: 2rem 3rem
+    background-color: #222831;
+    color: #eeeeee;
+    padding: 2rem 3rem;
+    width: 35rem;
+}
+
+.container form > h3 {
+    position: absolute;
+    background-color: #ff5722;
+    color: #eeeeee;
+    padding: 0.5rem 1rem;
+    top: -1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
 }
 
 .container form > input{
-    background-color: #dc143c;
-    width: fit-content;
-    margin: 0 auto;
+    background-color: #ff5722;
+    width: 95%;
+    margin: 1rem auto;
     padding: 0.5rem;
     border: none;
     border-radius: 0.5rem;
-    color: #ffffff;
+    color: #eeeeee;
+}
+
+.container form label:nth-child(3) > input:hover, 
+.container form label:nth-child(4) > input:hover{
+    cursor: text;
 }
 
 .container form > input:hover{
@@ -40,11 +73,14 @@
 
 .container form label *{
     display: block;
-    width: 60%;
+    width: 100%;
     border-radius: 0.5rem;
     padding-left: 1rem;
-    height: 1.5rem;
+    height: 2rem;
     margin-top: 0.3rem;
+    text-align: center;
+    color: #2d4059;
+    background: #eeeeee;
 }
 
 .container form label *:hover{

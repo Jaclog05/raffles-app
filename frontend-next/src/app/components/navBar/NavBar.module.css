@@ -1,13 +1,30 @@
+.first-color { 
+	background: #222831; 
+}
+	
+.second-color { 
+	background: #2d4059; 
+}
+
+.third-color { 
+	background: #ff5722; 
+}
+
+.fourth-color { 
+	background: #eeeeee; 
+}
+
+
 .container {
-    background-color: #dcdcdc;
-    border-bottom: 1px solid #ffa500;
+    background-color: #eeeeee;
+    border-bottom: 1px solid #ff5722;
     display: flex;
     justify-content: space-between;
 }
 
 .container div {
-    background-color: #ffa500;
-    color: #ffffff;
+    background-color: #ff5722;
+    color: #eeeeee;
     padding: 1rem;
     cursor: pointer;
 }
@@ -23,7 +40,7 @@
 }
 
 .container ul li:hover {
-    background-color: #ffa500;
-    color: #ffffff;
+    background-color: #ff5722;
+    color: #eeeeee;
     cursor: pointer;
 }
