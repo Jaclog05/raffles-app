@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Raffle.module.css'
 
-export default function Raffle({id, numTickets, prize, lotery, date, price, handleClosing}) {
+export default function Raffle({id, numTickets, prize, lotery, date, price, handleClosing, dateInfo}) {
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -10,12 +10,16 @@ export default function Raffle({id, numTickets, prize, lotery, date, price, hand
 
   return (
     <div className={styles.container}>
-      <button onClick={handleClick}> X </button>
-      <h4>{numTickets}</h4>
-      <h4>{prize}</h4>
-      <h4>{lotery}</h4>
-      <h4>{date}</h4>
-      <h4>{price}</h4>
+      <div className={styles.upper}>
+        <h4>{prize}</h4>
+        <button onClick={handleClick}> ✖ </button>
+        <img src='https://pc-tecnologia.com/855-large_default/televisor-samsung-32-pulgadas-serie-4.jpg' alt='prize'/>
+      </div>
+      <div className={styles.bottom}>
+        <h4 className={styles.price}>$ {price} /<span>boleta</span></h4>
+        <h3 className={styles.numTickets}>{numTickets} boletas</h3>
+        <h5>{dateInfo} <span className={dateInfo[3] !== 'ó' ? styles.playing : styles.finished}> ● </span></h5>
+      </div>
     </div>
   )
 }
