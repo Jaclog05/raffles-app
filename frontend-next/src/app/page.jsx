@@ -1,6 +1,5 @@
 'use client'
 
-import NavBar from './components/navBar/NavBar'
 import { useThemeContext } from '@/context/raffleState'
 import Raffle from './components/raffleComponent/Raffle'
 import styles from './page.module.css'
@@ -22,8 +21,6 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
-      <NavBar/>
       <div className={raffleInfo.rafflesArray.length ? styles.rafflesWrapper : styles.noRafflesCreated}>
           { raffleInfo.rafflesArray.length ? 
             raffleInfo.rafflesArray.map((raffle, idx) => {
@@ -44,6 +41,5 @@ export default function Home() {
           : <h1>Aún no hay rifas creadas 🤔</h1>
           }
       </div>
-    </div>
   )
 }
