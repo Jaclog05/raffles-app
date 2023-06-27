@@ -2,7 +2,6 @@
 
 import React from 'react'
 import styles from './createRaffle.module.css'
-import NavBar from '../components/navBar/NavBar'
 import { useThemeContext } from '@/context/raffleState'
 import { useState } from 'react'
 import { initialState } from './initialState'
@@ -36,8 +35,6 @@ export default function CreateRaffle() {
   }
 
   return (
-   <>
-   <NavBar/>
     <div className={styles.container}>
         <form onSubmit={handleSubmit}>
             <h3>Creación de Rifas</h3>
@@ -67,7 +64,6 @@ export default function CreateRaffle() {
             </label>
             <input type="submit" value="Crear Rifa"/>
         </form>
-    </div>  
-   </> 
+    </div>
   )
 }
