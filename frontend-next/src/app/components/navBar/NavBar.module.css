@@ -20,6 +20,8 @@
     border-bottom: 1px solid #ff5722;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    width: 100vw;
 }
 
 .container div {
