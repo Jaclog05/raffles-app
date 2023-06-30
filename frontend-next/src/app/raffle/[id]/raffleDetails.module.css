@@ -6,6 +6,16 @@
     background: #2d4059;
 }
 
+.raffleNotFound{
+    background-color: #2d4059;
+    height: 100vh;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eeeeee
+}
+
 .left {
     grid-area: left;
     display: flex;
