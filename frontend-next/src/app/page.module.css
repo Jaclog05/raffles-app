@@ -17,3 +17,8 @@
     justify-content: center;
     color: #eeeeee
 }
+
+.rafflesWrapper > a:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
