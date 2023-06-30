@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Raffle.module.css'
 
-export default function Raffle({id, numTickets, prize, lotery, date, price, handleClosing, dateInfo}) {
+export default function Raffle({id, numTickets, prize, price, handleClosing, dateInfo}) {
 
   const handleClick = (e) => {
     e.preventDefault()
