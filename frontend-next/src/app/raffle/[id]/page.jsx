@@ -5,6 +5,7 @@ import styles from './raffleDetails.module.css'
 import { useThemeContext } from '@/context/raffleState'
 import { useState } from 'react'
 import daysToRaffle from '@/app/components/raffleComponent/raffleDates'
+import Board from '@/app/components/board/Board'
 
 export default function RaffleDetails({params}) {
 
@@ -26,9 +27,7 @@ export default function RaffleDetails({params}) {
               <h2>{raffle.prize}</h2> 
               <img src='https://pc-tecnologia.com/855-large_default/televisor-samsung-32-pulgadas-serie-4.jpg' alt='prize'/>
           </div>
-          <div className={styles.right_up}>
-            board Component
-          </div>
+          <Board numTickets={raffle.numTickets}/>
           <div className={styles.right_bottom}>
               <h2>{raffle.numTickets} Boletas</h2>
               <h4>Juega con la lotería {raffle.lotery}</h4>
