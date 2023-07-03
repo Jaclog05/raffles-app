@@ -39,6 +39,10 @@ export default function CreateRaffle() {
         <form onSubmit={handleSubmit}>
             <h3>Creación de Rifas</h3>
             <label>
+                Seleccione una foto del producto
+                <input type="file" name="photo_raffle"/>
+            </label>
+            <label>
                 Seleccione cuantas boletas tendrá la rifa
                 <select name='numTickets' onChange={handleChange}>
                     <option name='numTickets' value={50}>50 boletas</option>
