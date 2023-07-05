@@ -1,5 +1,6 @@
 
 export const initialState = {
+    image: '',
     numTickets: 50,
     prize: '',
     lotery: '',

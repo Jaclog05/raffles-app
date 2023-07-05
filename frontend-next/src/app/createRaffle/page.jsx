@@ -5,6 +5,7 @@ import styles from './createRaffle.module.css'
 import { useThemeContext } from '@/context/raffleState'
 import { useState } from 'react'
 import { initialState } from './initialState'
+import axios from 'axios'
 
 export default function CreateRaffle() {
 
@@ -12,8 +13,29 @@ export default function CreateRaffle() {
 
   const [raffleInfo, setRaffleInfo] = useState(initialState)
 
-  const handleChange = (e) => {
-    const {value, name} = e.target
+  const handleChange = async (e) => {
+    const {value, name, type, files} = e.target
+
+        if(type === 'file'){
+            if(files && files[0]){
+                const file = files[0];
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('upload_preset', 'lm8j6moy');
+            
+                const CloudinaryResponse = await axios.post(
+                    'https://api.cloudinary.com/v1_1/dra7sow0c/upload',
+                    formData
+                )
+                setRaffleInfo(prevState => (
+                    {
+                        ...prevState,
+                        image: CloudinaryResponse.data.secure_url
+                    }
+                ))
+            }
+        }
+
         setRaffleInfo(prevState => (
             {
                 ...prevState,
@@ -38,9 +60,9 @@ export default function CreateRaffle() {
     <div className={styles.container}>
         <form onSubmit={handleSubmit}>
             <h3>Creación de Rifas</h3>
-            <label>
+            <label className={styles.fileImage}>
                 Seleccione una foto del producto
-                <input type="file" name="photo_raffle"/>
+                <input type="file" name="photo_raffle" id='file' onChange={handleChange}/>
             </label>
             <label>
                 Seleccione cuantas boletas tendrá la rifa
