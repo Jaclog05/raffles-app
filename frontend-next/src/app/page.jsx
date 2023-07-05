@@ -30,6 +30,7 @@ export default function Home() {
                   <Raffle
                     id={raffle.id}
                     key={idx}
+                    img={raffle.image}
                     numTickets={raffle.numTickets}
                     prize={raffle.prize}
                     price={raffle.price}

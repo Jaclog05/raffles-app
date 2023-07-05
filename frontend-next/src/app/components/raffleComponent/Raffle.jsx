@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Raffle.module.css'
 
-export default function Raffle({id, numTickets, prize, price, handleClosing, dateInfo}) {
+export default function Raffle({id, img, numTickets, prize, price, handleClosing, dateInfo}) {
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -13,7 +13,7 @@ export default function Raffle({id, numTickets, prize, price, handleClosing, dat
       <div className={styles.upper}>
         <h4>{prize}</h4>
         <button onClick={handleClick}> ✖ </button>
-        <img src='https://pc-tecnologia.com/855-large_default/televisor-samsung-32-pulgadas-serie-4.jpg' alt='prize'/>
+        <img src={img} alt='prize'/>
       </div>
       <div className={styles.bottom}>
         <h4 className={styles.price}>$ {price} /<span>boleta</span></h4>
