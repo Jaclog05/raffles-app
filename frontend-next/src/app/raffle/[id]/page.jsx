@@ -25,7 +25,7 @@ export default function RaffleDetails({params}) {
         <div className={styles.container}>
           <div className={styles.left}>
               <h2>{raffle.prize}</h2> 
-              <img src='https://pc-tecnologia.com/855-large_default/televisor-samsung-32-pulgadas-serie-4.jpg' alt='prize'/>
+              <img src={raffle.image} alt='prize'/>
           </div>
           <Board numTickets={raffle.numTickets}/>
           <div className={styles.right_bottom}>
