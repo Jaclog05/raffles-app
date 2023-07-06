@@ -26,10 +26,9 @@ export default function Home() {
           { raffleInfo.rafflesArray.length ? 
             raffleInfo.rafflesArray.map((raffle, idx) => {
               return (
-                <Link href={`/raffle/${encodeURIComponent(raffle.id)}`}>
+                <Link href={`/raffle/${encodeURIComponent(raffle.id)}`} key={idx}>
                   <Raffle
                     id={raffle.id}
-                    key={idx}
                     img={raffle.image}
                     numTickets={raffle.numTickets}
                     prize={raffle.prize}

@@ -1,11 +1,11 @@
 .rafflesWrapper{
     background-color: #2d4059;
     height: max-content;
-    padding: 8rem 2rem;
+    padding: 30vh 5vw;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    gap: 1.5rem
+    gap: 2vw
 }
 
 .noRafflesCreated{
