@@ -1,12 +1,21 @@
 import React from 'react'
 import styles from './Raffle.module.css'
+import deleteCloud from './deleteCloud'
 
 export default function Raffle({id, img, numTickets, prize, price, handleClosing, dateInfo}) {
 
   const handleClick = (e) => {
     e.preventDefault()
     handleClosing(id)
+    deleteCloud(getPublicIdFromUrl(img))
   }
+
+  const getPublicIdFromUrl = (url) => {
+    const regex = /\/v\d+\/([^/]+)\.\w{3,4}$/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  };
+
 
   return (
     <div className={styles.container}>
