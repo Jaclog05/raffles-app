@@ -3,7 +3,7 @@ const {Schema, model} = require('mongoose')
 const RaffleSchema = new Schema({
     numTickets: {
         type: Number,
-        require: true
+        require: false
     },
     prize: {
         type: String,
@@ -11,11 +11,11 @@ const RaffleSchema = new Schema({
     },
     date: {
         type: String,
-        require: true
+        require: false
     },
     lotery: {
         type: String,
-        require: true
+        require: false
     },
     price: {
         type: Number,
