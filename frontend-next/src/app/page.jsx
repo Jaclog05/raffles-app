@@ -5,6 +5,8 @@ import Raffle from './components/raffleComponent/Raffle'
 import styles from './page.module.css'
 import daysToRaffle from './components/raffleComponent/raffleDates'
 import Link from 'next/link'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 export default function Home() {
 
@@ -12,11 +14,31 @@ export default function Home() {
   
   const today = new Date()
 
+  useEffect(() => {
+
+    async function fetchData(){
+      const response = await axios.get("http://localhost:4000/")
+      return response.data
+    }
+
+    fetchData().then((rafflesAxios) => {
+      setRaffleInfo(prevInfo => {
+        return {
+          ...prevInfo,
+          rafflesArray: rafflesAxios
+        }
+      })
+    })
+  }, [])
+
   const handleClosing = (id) => {
+    axios.delete("http://localhost:4000/raffle/" + id)
+        .then(response => response.data)
+        .catch(err => console.log(err))
     setRaffleInfo(prevInfo => {
       return {
         ...prevInfo,
-        rafflesArray: prevInfo.rafflesArray.filter(raffle => raffle.id != id)
+        rafflesArray: prevInfo.rafflesArray.filter(raffle => raffle._id != id)
       }
     })
   }
@@ -26,9 +48,9 @@ export default function Home() {
           { raffleInfo.rafflesArray.length ? 
             raffleInfo.rafflesArray.map((raffle, idx) => {
               return (
-                <Link href={`/raffle/${encodeURIComponent(raffle.id)}`} key={idx}>
+                <Link href={`/raffle/${encodeURIComponent(raffle._id)}`} key={idx}>
                   <Raffle
-                    id={raffle.id}
+                    id={raffle._id}
                     img={raffle.image}
                     numTickets={raffle.numTickets}
                     prize={raffle.prize}
