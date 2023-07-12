@@ -12,7 +12,7 @@ export default function RaffleDetails({params}) {
   const [raffleInfo, setRaffleInfo] = useThemeContext()
 
   const filterRaffle = (rafflesArray, id) => {
-    return rafflesArray.find(raffle => raffle.id == id)
+    return rafflesArray.find(raffle => raffle._id == id)
   }
 
   const today = new Date()

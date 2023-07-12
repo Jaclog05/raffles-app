@@ -29,7 +29,7 @@ const deleteCloud = async (publicId) => {
       api_key: apiKey,
       timestamp: timestamp,
     });
-    console.log(response);
+    /* console.log(response); */
   } catch (error) {
     console.log(error);
   }
