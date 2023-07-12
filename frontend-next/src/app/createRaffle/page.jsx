@@ -46,13 +46,9 @@ export default function CreateRaffle() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setRaffleGlobal(prevState => {
-        const newId = prevState.rafflesArray.length;
-        return {
-            ...prevState,
-            rafflesArray: [...prevState.rafflesArray, {id: newId, ...raffleInfo}]
-        }
-    })
+    axios.post("http://localhost:4000/create", raffleInfo)
+        .then(response => response.data)
+        .catch(err => console.log(err))
     setRaffleInfo(initialState)
   }
 
