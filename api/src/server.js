@@ -1,5 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
+const morgan = require('morgan')
 
 //Initializations
 
@@ -13,6 +15,8 @@ app.set('port', process.env.PORT || 4000)
 
 app.use(express.urlencoded({extended: false}))
 app.use(bodyParser.json({ limit: '50mb' }))
+app.use(morgan('dev'))
+app.use(cors())
 
 //routes
 
