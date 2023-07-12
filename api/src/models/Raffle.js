@@ -5,6 +5,10 @@ const RaffleSchema = new Schema({
         type: Number,
         require: false
     },
+    image: {
+        type: String,
+        require: false
+    },
     prize: {
         type: String,
         require: true

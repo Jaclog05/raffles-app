@@ -10,6 +10,6 @@ const router = Router()
 router.get('/', getRaffles)
 router.post('/create', createRaffle)
 router.get('/raffle/:id', getRaffleById)
-router.delete('/raffle/:id', deleteRaffle)
+router.delete('/raffle/:_id', deleteRaffle)
 
 module.exports = router
