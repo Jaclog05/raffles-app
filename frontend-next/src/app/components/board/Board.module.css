@@ -12,7 +12,7 @@
     overflow-x: hidden;
 }
 
-.wrapper > p {
+.noPicked {
     font-weight: 700;
     background: #ff5722;
     color: #222831;
@@ -20,7 +20,16 @@
     text-align: center;
 }
 
-.wrapper > p:hover {
+.noPicked:hover {
     cursor: pointer;
     background: #adff2f;
+}
+
+.picked {
+    cursor: pointer;
+    font-weight: 700;
+    background: #222831;
+    color: #eeeeee;
+    border-radius: 50rem;
+    text-align: center;
 }
