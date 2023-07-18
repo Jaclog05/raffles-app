@@ -1,16 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './Board.module.css'
+import elements from './elements';
 
 export default function Board({numTickets}) {
 
-  const elements = Array.from({ length: parseInt(numTickets) }, (_, index) => {
-    return {
-      value: index + 1,
-      picked: false
-    }
-  });
+  const [boardState, setBoardState] = useState([])
 
-  const [boardState, setBoardState] = useState(elements)
+  useEffect(() => {
+    setBoardState([...elements(numTickets)])
+  }, [])
 
   const toggle = (index) => {
     setBoardState((prevItems) => {
